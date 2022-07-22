@@ -15,9 +15,10 @@ let textStartY = 170;
 let barStartY = 157;
 let barHeight = 15;
 let language = 'ES';
+let cv;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  cv = createCanvas(windowWidth, windowHeight);
   pg = createGraphics(windowWidth, windowHeight);
 
   fontRegular = loadFont('assets/ChakraPetch-Regular.ttf');
@@ -151,6 +152,21 @@ function draw() {
   rect(360, barStartY + 280, creativeCodingOutput * 0.01, barHeight);
 
   image(pg, 0, 0);
+
+  if (
+    (mouseX >= width - 150 &&
+      mouseX <= width - 150 + 35 &&
+      mouseY >= 100 &&
+      mouseY <= 100 + 20) ||
+    (mouseX >= width - 150 + 40 &&
+      mouseX <= width - 150 + 45 + 35 &&
+      mouseY >= 100 &&
+      mouseY <= 100 + 20)
+  ) {
+    cursor(HAND);
+  } else {
+    cursor(ARROW);
+  }
 }
 
 function creativeCoding() {
@@ -221,13 +237,13 @@ function mousePressed() {
   pg.fill(255, 60, 30);
 
   if (mouseX >= width - 150 && mouseX <= width - 150 + 35) {
-    if (mouseY >= 100 && mouseY <= 100 + 65) {
+    if (mouseY >= 100 && mouseY <= 100 + 50) {
       language = 'EN';
     }
   }
 
   if (mouseX >= width - 150 + 40 && mouseX <= width - 150 + 45 + 35) {
-    if (mouseY >= 100 && mouseY <= 100 + 65) {
+    if (mouseY >= 100 && mouseY <= 100 + 50) {
       language = 'ES';
     }
   }
