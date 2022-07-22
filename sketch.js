@@ -16,6 +16,7 @@ let barStartY = 157;
 let barHeight = 15;
 let language = 'ES';
 let cv;
+let barX = 340;
 
 function setup() {
   cv = createCanvas(windowWidth, windowHeight);
@@ -78,7 +79,18 @@ function draw() {
     text('serendipity', 220, textStartY + 180);
     text('creativity', 220, textStartY + 210);
     text('creativeCodingOutput', 220, textStartY + 280);
+
+    textAlign(LEFT);
+    textSize(15);
     textFont(fontSemiBold);
+    text('controls', 500, textStartY + 340);
+    textFont(fontRegular);
+    text(
+      '[K] and [W]: to increase and decrease playfulAttitude',
+      500,
+      textStartY + 360
+    );
+    text('[P]: to active o deactive coding state', 500, textStartY + 380);
   }
 
   if (language == 'ES') {
@@ -86,12 +98,28 @@ function draw() {
     text('estadoDeFlujo', 220, textStartY + 30);
     text('atención', 220, textStartY + 60);
     text('curiosidad', 220, textStartY + 90);
-    text('programar', 220, textStartY + 120);
+    text('programando', 220, textStartY + 120);
     text('tiempoDePráctica', 220, textStartY + 150);
     text('serendípia', 220, textStartY + 180);
     text('creatividad', 220, textStartY + 210);
     //textFont(fontSemiBold);
     text('programaciónCreativa', 220, textStartY + 280);
+
+    textAlign(LEFT);
+    textSize(15);
+    textFont(fontSemiBold);
+    text('controles', 500, textStartY + 340);
+    textFont(fontRegular);
+    text(
+      '[K] and [W]: aumentar o reducir la actitud de juego',
+      500,
+      textStartY + 360
+    );
+    text(
+      '[P]: activar o desactivar estado de la acción de programar',
+      500,
+      textStartY + 380
+    );
   }
 
   textAlign(LEFT);
@@ -118,38 +146,38 @@ function draw() {
   // barras
   noStroke();
   // playfulAttitude
-  fill(0, 255, 255);
-  rect(360, barStartY, playfulAttitude * 10, barHeight);
+  fill(190, 255, 0);
+  rect(barX, barStartY, playfulAttitude * 10, barHeight);
   // flowState
   if (flowState == true) {
-    fill(0, 255, 255);
+    fill(190, 255, 0);
   } else {
     fill(50, 50, 50);
   }
-  rect(360, barStartY + 30, barHeight, barHeight);
+  rect(barX, barStartY + 30, barHeight, barHeight);
   // attention
-  fill(0, 255, 255);
-  rect(360, barStartY + 60, attention * 0.1, barHeight);
+  fill(190, 255, 0);
+  rect(barX, barStartY + 60, attention * 0.1, barHeight);
   // curiosity
-  rect(360, barStartY + 90, curiosity * 0.1, barHeight);
+  rect(barX, barStartY + 90, curiosity * 0.1, barHeight);
   // coding
   if (coding == true) {
-    fill(0, 255, 255);
+    fill(190, 255, 0);
   } else {
     fill(50, 50, 50);
   }
-  rect(360, barStartY + 120, barHeight, barHeight);
+  rect(barX, barStartY + 120, barHeight, barHeight);
   // practiceTime
-  fill(0, 255, 255);
-  rect(360, barStartY + 150, practiceTime * 0.1, barHeight);
+  fill(190, 255, 0);
+  rect(barX, barStartY + 150, practiceTime * 0.1, barHeight);
   // serendipity
-  rect(360, barStartY + 180, serendipity * 10, barHeight);
+  rect(barX, barStartY + 180, serendipity * 10, barHeight);
   // creativity
-  rect(360, barStartY + 210, creativity * 0.1, barHeight);
+  rect(barX, barStartY + 210, creativity * 0.1, barHeight);
   // creativeCodingOutput
   //fill(255, 100, 0);
-  fill(0, 255, 255);
-  rect(360, barStartY + 280, creativeCodingOutput * 0.01, barHeight);
+  fill(190, 255, 0);
+  rect(barX, barStartY + 280, creativeCodingOutput * 0.01, barHeight);
 
   image(pg, 0, 0);
 
