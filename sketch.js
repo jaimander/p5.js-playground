@@ -20,6 +20,7 @@ let barX = 340;
 
 function setup() {
   cv = createCanvas(windowWidth, windowHeight);
+  cv.parent('p5Container');
   pg = createGraphics(windowWidth, windowHeight);
 
   fontRegular = loadFont('assets/ChakraPetch-Regular.ttf');
@@ -83,14 +84,48 @@ function draw() {
     textAlign(LEFT);
     textSize(15);
     textFont(fontSemiBold);
-    text('controls', 500, textStartY + 340);
+    text('controls', 50, textStartY + 340);
     textFont(fontRegular);
     text(
-      '[K] and [W]: to increase and decrease playfulAttitude',
+      '[K] and [W]: to increase and decrease playfulAttitude.',
+      50,
+      textStartY + 360
+    );
+    text('[P]: to active o deactive coding state.', 50, textStartY + 380);
+
+    textFont(fontSemiBold);
+    text('how it works?', 500, textStartY + 340);
+    textFont(fontRegular);
+    text(
+      'i. The time you spend programming will be reflected in the results.',
       500,
       textStartY + 360
     );
-    text('[P]: to active o deactive coding state', 500, textStartY + 380);
+    text(
+      'ii. If you have a playful attitude, it is very likely that you will enter a state of flow.',
+      500,
+      textStartY + 380
+    );
+    text(
+      'iii. If you are in a state of flow, your attention and curiosity will grow.',
+      500,
+      textStartY + 400
+    );
+    text(
+      'iv. If you are programming and you enter a state of flow, it is likely that you will have a moment of serendipity..',
+      500,
+      textStartY + 420
+    );
+    text(
+      'v. Your creativity will be fed by your spirit of play, your level of attention, the curiosity you have, and the experience you have gained with practice.',
+      500,
+      textStartY + 440
+    );
+    text(
+      'vi. The results you achieve will depend on your creativity, practice time and whether inspiration finds you programming.',
+      500,
+      textStartY + 460
+    );
   }
 
   if (language == 'ES') {
@@ -108,17 +143,50 @@ function draw() {
     textAlign(LEFT);
     textSize(15);
     textFont(fontSemiBold);
-    text('controles', 500, textStartY + 340);
+    text('controles', 50, textStartY + 340);
     textFont(fontRegular);
     text(
-      '[K] and [W]: aumentar o reducir la actitud de juego',
+      '[K] and [W]: aumentar o reducir la actitud de juego.',
+      50,
+      textStartY + 360
+    );
+    text(
+      '[P]: activar o desactivar estado de la acción de programar.',
+      50,
+      textStartY + 380
+    );
+    textFont(fontSemiBold);
+    text('funcionamiento', 500, textStartY + 340);
+    textFont(fontRegular);
+    text(
+      'i. El tiempo que dediques a programar se verá reflejado en los resultados.',
       500,
       textStartY + 360
     );
     text(
-      '[P]: activar o desactivar estado de la acción de programar',
+      'ii. Si tienes una actitud de juego es muy probable que entres en estado de flujo.',
       500,
       textStartY + 380
+    );
+    text(
+      'iii. Si estás en estado de flujo, tu atención y tu curiosidad crecerán.',
+      500,
+      textStartY + 400
+    );
+    text(
+      'iv. Si estás programando y entras en estado de flujo es probable que tengas un momento de serendípia.',
+      500,
+      textStartY + 420
+    );
+    text(
+      'v. Tu creatividad se alimentará de tu espiritu de juego, tu nivel de atención, la curiosidad que tengas, y la experiencia que hayas ganado con la práctica.',
+      500,
+      textStartY + 440
+    );
+    text(
+      'vi. Los resultados que logres dependerán de tu creatividad, el tiempo de práctica y de que la inspiración te encuentre programando.',
+      500,
+      textStartY + 460
     );
   }
 
@@ -179,7 +247,7 @@ function draw() {
   fill(190, 255, 0);
   rect(barX, barStartY + 280, creativeCodingOutput * 0.01, barHeight);
 
-  image(pg, 0, 0);
+  //image(pg, 0, 0);
 
   if (
     (mouseX >= width - 150 &&
