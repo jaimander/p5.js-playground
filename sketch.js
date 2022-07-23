@@ -20,8 +20,7 @@ let barX = 340;
 
 function setup() {
   cv = createCanvas(windowWidth, windowHeight);
-  //cv.parent('p5Container');
-  pg = createGraphics(windowWidth, windowHeight);
+  cv.parent('p5Container');
 
   fontRegular = loadFont('assets/ChakraPetch-Regular.ttf');
   fontItalic = loadFont('assets/ChakraPetch-Italic.ttf');
