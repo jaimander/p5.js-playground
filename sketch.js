@@ -1,55 +1,52 @@
 
 function setup() {
-  cv = createCanvas(windowWidth, windowHeight);
+  cv = createCanvas(600, 600);
 }
 
 function draw() {
-  colorMode(HSB, 255);
+  background(100);
 
-  let h = noise(frameCount * 0.01) * 255;
-  let g = noise(frameCount * 0.03) * 255;
-  //console.log(noise(frameCount*0.1)*255);
-  //console.log(h);
-
-  background(h, 100, 200);
-
-  let v = 0;
-
-
-  rectMode(CENTER);
-  stroke(0);
-  noFill();
-  // rect(width / 2, height / 2, 400, 400);
-
-  if (keyIsPressed) {
-    //console.log(key.charCodeAt());
-
-    v = int(key.charCodeAt());
-
-    fill(g, 100, 200);
-    textAlign(CENTER, CENTER);
-    textSize(200);
-    text(v, width / 2, height / 2);
-    fill(0);
-    textSize(30);
-    text(key, width / 2, height / 2 + 300);
-
-
-    for (let i = width / 2 - 200; i < width / 2 + 200; i += 10) {
-      for (let j = height / 2 - 200; j < height / 2 + 200; j += 10) {
-        let c = get(i, j);
-        //console.log(c);
-        noStroke();
-        fill(c[0], c[1], c[2], 255);
-        if (i > width / 2 - 200 && j > height / 2 - 200) {
-          ellipse(i, j, 10, 10);
-        }
-      }
-    }
+  // cuadricula
+  stroke(255);
+  strokeWeight(0.2);
+  /*
+  for (let i = 0; i < width; i += 100) {
+    line(i, 0, i, height);
   }
+  for (let i = 0; i < height; i += 100) {
+    line(0, i, width, i);
+  }
+  */
 
+  noStroke();
+  angleMode(DEGREES);
 
+  // cian
+  fill(0, 255, 255);
+  rect(100, 200, 100, 80);
 
+  /*
+    // magenta original
+    fill(255, 0, 255);
+    rect(200, 200, 100, 100);
+  */
 
+  //rotate(10);
+  translate(300, 200); 
+  rotate(45); 
+  fill(255, 0, 255);
+  rectMode(CENTER);
+  rect(0, 0, 100, 80);
 
+  noFill();
+  stroke(255, 0, 255);
+  strokeWeight(2);
+  rectMode(CORNER);
+  //rect(0, 0, 400, 400);
+
+  rotate(-45);
+  translate(-300, -200); 
+  noStroke();
+  fill(255, 255, 0);
+  arc(100, 100, 100, 100, 0, 90);
 }
