@@ -9,21 +9,25 @@ function draw() {
   // cuadricula
   stroke(255);
   strokeWeight(0.2);
-  /*
+  
   for (let i = 0; i < width; i += 100) {
     line(i, 0, i, height);
   }
   for (let i = 0; i < height; i += 100) {
     line(0, i, width, i);
   }
-  */
+  
 
   noStroke();
   angleMode(DEGREES);
 
   // cian
+  push();
+  translate(100,200);
+  rotate(-20);
   fill(0, 255, 255);
-  rect(100, 200, 100, 80);
+  rect(0, 0, 100, 80);
+  pop();
 
   /*
     // magenta original
